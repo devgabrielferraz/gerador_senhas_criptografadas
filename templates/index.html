@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Senhas</h1>
+        <form action="/gerar_senha" method="POST">
+            <label for="chave">Digite a base da sua senha:</label>
+            <input type="text" id="chave" name="chave" required>
+            <button type="submit">Gerar Senha</button>
+        </form>
+        {% if senha %}
+        <div class="resultado">
+            <h2>Sua senha gerada:</h2>
+            <p>{{ senha }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
